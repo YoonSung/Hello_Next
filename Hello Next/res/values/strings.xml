@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HELLO NEXT</string>
+    <string name="action_settings">Setting</string>
+    <string name="splash_login">Login</string>
+    <string name="splash_description">BackgroundImage</string>
+    <string name="splash_hint_id">ID</string>
+    <string name="splash_hint_pw">PW</string>
+    <string name="splash_text_join">Register</string>
+</resources>
