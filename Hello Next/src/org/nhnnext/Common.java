@@ -127,112 +127,25 @@ public class Common {
 	}
 
 	public boolean uploadProfile(int id, String filePath) {
+		
+		String tempURL = "http://10.73.43.166:3080/DBProject/saveImage";// "http://192.168.1.135:3080/DBProject/saveImage";
+		
 		String lineEnd = "\r\n";
 		String twoHyphens = "--";
 		String boundary = "*****";
-
-		FileInputStream fis = null;
-		URL url = null;
+		URL connectUrl  = null;
 		HttpURLConnection conn = null;
-		DataOutputStream dos = null;
-		int responseCode = 0;
-
-		try {
-			System.out.println("start\n");
-			fis = new FileInputStream(filePath);
-			Log.d("Common", "FileInputStream  is " + fis);
-			String tempURL = "http://10.73.43.166:3080/DBProject/saveImage";// "http://192.168.1.135:3080/DBProject/saveImage";
-			Log.e("Common", "tempURL: "+tempURL);
-			url = new URL(tempURL);
-			conn = (HttpURLConnection) url.openConnection();
-
-			// 서버 접속시의 Time out(ms)
-
-			conn.setConnectTimeout(10 * 100000);
-
-			// Read시의 Time out(ms)
-
-			conn.setReadTimeout(10 * 100000);
-			conn.setDoOutput(true);
-
-			conn.setRequestMethod("POST");
-			// 연결을 지속하도록 함
-			conn.setRequestProperty("Connection", "Keep-Alive");
-
-			// 캐릭터셋을 UTF-8로 요청
-			conn.setRequestProperty("Accept-Charset", "UTF-8");
-
-			// 캐시된 데이터를 사용하지 않고 매번 서버로부터 다시 받음
-			conn.setRequestProperty("Cache-Controll", "no-cache");
-			// conn.setRequestProperty("Transfer-Encoding", "chunked-Alive");
-
-			conn.setRequestProperty("Content-Type",
-					"multipart/form-data;boundary=" + boundary);
-			conn.setDoInput(true);
-
-			dos = new DataOutputStream(conn.getOutputStream());
-
-			int bytesAvailable = fis.available();
-
-			Log.e("Common", "bytesAvailable : " + bytesAvailable);
-
-			int maxBufferSize = 1024;
-			int bufferSize = Math.min(bytesAvailable, maxBufferSize);
-			Log.e("Common", "bufferSize : " + bufferSize);
-
-			byte[] buffer = new byte[bufferSize];
-			int bytesRead = fis.read(buffer, 0, bufferSize);
-			Log.e("Common", "bytesRead : " + bytesRead);
-
-			// read image
-			while (bytesRead > 0) {
-				dos.write(buffer, 0, bufferSize);
-				bytesAvailable = fis.available();
-				bufferSize = Math.min(bytesAvailable, maxBufferSize);
-				bytesRead = fis.read(buffer, 0, bufferSize);
-				Log.e("Common", "bytesRead in while: " + bytesRead);
-			}
-			dos.writeBytes(lineEnd);
-			dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
-			dos.flush();
-
-			responseCode = conn.getResponseCode();
-			System.out.println("end\n");
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				fis.close();
-				// dos.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		Log.e("Common", "responseCode : " + responseCode);
-
-		if (responseCode == 200 || responseCode == 201)
-			return true;
-
-		return false;
-	}
-
-	public void DoFileUpload(String absolutePath) {
-		HttpFileUpload("http://10.73.43.166:3080/DBProject/saveImage/16", "", absolutePath);
-	}
-
-	public void HttpFileUpload(String urlString, String params, String fileName) {
-		String lineEnd = "\r\n";
-		String twoHyphens = "--";
-		String boundary = "*****";
+		DataOutputStream dos  = null;
+		
+		FileInputStream mFileInputStream = null;
 		try {
 
-			FileInputStream mFileInputStream = new FileInputStream(fileName);
-			URL connectUrl = new URL(urlString);
-			Log.d("Test", "mFileInputStream  is " + mFileInputStream);
+			mFileInputStream = new FileInputStream(filePath);
+			connectUrl = new URL(tempURL);
+			Log.d("Common", "mFileInputStream  is " + mFileInputStream);
 
 			// open connection
-			HttpURLConnection conn = (HttpURLConnection) connectUrl
+			conn = (HttpURLConnection) connectUrl
 					.openConnection();
 			conn.setDoInput(true);
 			conn.setDoOutput(true);
@@ -243,10 +156,10 @@ public class Common {
 					"multipart/form-data;boundary=" + boundary);
 
 			// write data
-			DataOutputStream dos = new DataOutputStream(conn.getOutputStream());
+			dos = new DataOutputStream(conn.getOutputStream());
 			dos.writeBytes(twoHyphens + boundary + lineEnd);
 			dos.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\""
-					+ fileName + "\"" + lineEnd);
+					+ id + ".png\"" + lineEnd);
 			dos.writeBytes(lineEnd);
 
 			int bytesAvailable = mFileInputStream.available();
@@ -256,7 +169,7 @@ public class Common {
 			byte[] buffer = new byte[bufferSize];
 			int bytesRead = mFileInputStream.read(buffer, 0, bufferSize);
 
-			Log.d("Test", "image byte is " + bytesRead);
+			Log.d("Common", "image byte is " + bytesRead);
 
 			// read image
 			while (bytesRead > 0) {
@@ -277,18 +190,18 @@ public class Common {
 			// get response
 			int ch;
 			InputStream is = conn.getInputStream();
-			StringBuffer b = new StringBuffer();
+			StringBuffer sb = new StringBuffer();
 			while ((ch = is.read()) != -1) {
-				b.append((char) ch);
+				sb.append((char) ch);
 			}
-			String s = b.toString();
-			Log.e("Test", "result = " + s);
-			//mEdityEntry.setText(s);
+			String s = sb.toString();
+			Log.e("Common", "result = " + s);
 			dos.close();
 
 		} catch (Exception e) {
-			Log.d("Test", "exception " + e.getMessage());
-			// TODO: handle exception
+			Log.d("Common", "exception " + e.getMessage());
 		}
+
+		return true;
 	}
 }

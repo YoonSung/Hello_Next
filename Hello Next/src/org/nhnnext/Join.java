@@ -79,9 +79,9 @@ public class Join extends Activity implements OnClickListener {
 		case R.id.join_btn_register:
 			new Thread() {
 				public void run() {
-					new Common(Join.this).DoFileUpload(filePath);
-					//new Common(Join.this).uploadProfile(15, filePath);
-					//new Common(Join.this).getJsonFromServer("select * from book");
+					Common common = new Common(Join.this);
+					common.uploadProfile(303, filePath);
+					common.getJsonFromServer("select * from book");
 				}
 			}.start();
 			break;
