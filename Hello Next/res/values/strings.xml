@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">HELLO NEXT</string>
     <string name="action_settings">Setting</string>
     <string name="splash_login">Login</string>
@@ -7,4 +8,64 @@
     <string name="splash_hint_id">ID</string>
     <string name="splash_hint_pw">PW</string>
     <string name="splash_text_join">Register</string>
+    <string name="join_hint_id">ID (Numberic)</string>
+    <string name="join_hint_pw">Password</string>
+    <string name="join_hint_pwRe">Password Confirm</string>
+    <string name="join_hint_name">Name</string>
+    <string name="join_hint_nickname">Nickname</string>
+    <string name="join_hint_address">Current Home Address</string>
+    <string name="join_img_description">ProfileImage</string>
+    <string name="join_btn_next">Next</string>
+    <string name="join_spinner_birth">Birth</string>
+    <string name="join_txt_birth">Birth</string>
+
+    <string-array name="join_string_birth">
+        <item>1970</item>
+        <item>1971</item>
+        <item>1972</item>
+        <item>1973</item>
+        <item>1974</item>
+        <item>1975</item>
+        <item>1976</item>
+        <item>1977</item>
+        <item>1978</item>
+        <item>1979</item>
+        <item>1980</item>
+        <item>1981</item>
+        <item>1982</item>
+        <item>1983</item>
+        <item>1984</item>
+        <item>1985</item>
+        <item>1986</item>
+        <item>1987</item>
+        <item>1988</item>
+        <item>1989</item>
+        <item>1990</item>
+        <item>1991</item>
+        <item>1992</item>
+        <item>1993</item>
+        <item>1994</item>
+        <item>1995</item>
+    </string-array>
+
+    <string name="join_txt_grade">Grade</string>
+    <string name="join_spinner_grade">Grade</string>
+
+    <string-array name="join_string_grade">
+        <item>1기</item>
+        <item>2기</item>
+    </string-array>
+
+    <string name="join_txt_village">Village</string>
+    <string name="join_spinner_village">Village</string>
+
+    <string-array name="join_string_village">
+        <item>1 마을</item>
+        <item>2 마을</item>
+        <item>3 마을</item>
+        <item>4 마을</item>
+    </string-array>
+
+    <string name="join_txt_additional">It is Additional Page.\nBut If you input this form.\nYou have advantage when using this Service.</string>
+    <string name="join_btn_register">Register</string>
 </resources>

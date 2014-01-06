@@ -8,6 +8,11 @@
 package org.nhnnext;
 
 public final class R {
+    public static final class array {
+        public static final int join_string_birth=0x7f060000;
+        public static final int join_string_grade=0x7f060001;
+        public static final int join_string_village=0x7f060002;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -23,31 +28,65 @@ public final class R {
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int splash_bg=0x7f020001;
+        public static final int upload=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080008;
-        public static final int splash_btnLogin=0x7f080006;
-        public static final int splash_edt_id=0x7f080004;
-        public static final int splash_edt_pw=0x7f080005;
-        public static final int splash_img_bg=0x7f080001;
-        public static final int splash_login_frame=0x7f080003;
-        public static final int splash_text_join=0x7f080007;
-        public static final int splash_title=0x7f080002;
-        public static final int tabHost=0x7f080000;
+        public static final int action_settings=0x7f090018;
+        public static final int join_addtional_frame=0x7f090008;
+        public static final int join_basic_frame=0x7f090000;
+        public static final int join_btn_next=0x7f090007;
+        public static final int join_btn_register=0x7f09000f;
+        public static final int join_edt_address=0x7f09000a;
+        public static final int join_edt_id=0x7f090002;
+        public static final int join_edt_name=0x7f090005;
+        public static final int join_edt_nickname=0x7f090006;
+        public static final int join_edt_pw=0x7f090003;
+        public static final int join_edt_pwRe=0x7f090004;
+        public static final int join_imgbtn_profile=0x7f090001;
+        public static final int join_spinner_birth=0x7f09000c;
+        public static final int join_spinner_grade=0x7f09000e;
+        public static final int join_txt_additional=0x7f090009;
+        public static final int join_txt_age=0x7f09000b;
+        public static final int join_txt_grade=0x7f09000d;
+        public static final int splash_btnLogin=0x7f090016;
+        public static final int splash_edt_id=0x7f090014;
+        public static final int splash_edt_pw=0x7f090015;
+        public static final int splash_img_bg=0x7f090011;
+        public static final int splash_login_frame=0x7f090013;
+        public static final int splash_text_join=0x7f090017;
+        public static final int splash_title=0x7f090012;
+        public static final int tabHost=0x7f090010;
     }
     public static final class layout {
         public static final int additional_tab=0x7f030000;
         public static final int game_tab=0x7f030001;
-        public static final int list_tab=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int splash=0x7f030004;
+        public static final int join=0x7f030002;
+        public static final int list_tab=0x7f030003;
+        public static final int main=0x7f030004;
+        public static final int splash=0x7f030005;
     }
     public static final class menu {
-        public static final int splash=0x7f070000;
+        public static final int splash=0x7f080000;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int join_btn_next=0x7f05000e;
+        public static final int join_btn_register=0x7f050016;
+        public static final int join_hint_address=0x7f05000c;
+        public static final int join_hint_id=0x7f050007;
+        public static final int join_hint_name=0x7f05000a;
+        public static final int join_hint_nickname=0x7f05000b;
+        public static final int join_hint_pw=0x7f050008;
+        public static final int join_hint_pwRe=0x7f050009;
+        public static final int join_img_description=0x7f05000d;
+        public static final int join_spinner_birth=0x7f05000f;
+        public static final int join_spinner_grade=0x7f050012;
+        public static final int join_spinner_village=0x7f050014;
+        public static final int join_txt_additional=0x7f050015;
+        public static final int join_txt_birth=0x7f050010;
+        public static final int join_txt_grade=0x7f050011;
+        public static final int join_txt_village=0x7f050013;
         public static final int splash_description=0x7f050003;
         public static final int splash_hint_id=0x7f050004;
         public static final int splash_hint_pw=0x7f050005;
@@ -76,10 +115,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

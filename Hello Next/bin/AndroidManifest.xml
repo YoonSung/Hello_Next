@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -26,6 +28,7 @@
         <activity android:name="NextList"></activity>
         <activity android:name="GameTab"></activity>
         <activity android:name="AdditionalTab"></activity>
+        <activity android:name="Join"></activity>
     </application>
 
 </manifest>
