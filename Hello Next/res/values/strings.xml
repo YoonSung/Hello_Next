@@ -52,8 +52,8 @@
     <string name="join_spinner_grade">Grade</string>
 
     <string-array name="join_string_grade">
-        <item>1기</item>
-        <item>2기</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <string name="join_txt_village">Village</string>

@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name="Main"></activity>
-        <activity android:name="NextList"></activity>
+        <activity android:name="ListTab"></activity>
         <activity android:name="GameTab"></activity>
         <activity android:name="AdditionalTab"></activity>
         <activity android:name="Join"></activity>
