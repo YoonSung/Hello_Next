@@ -84,7 +84,7 @@ public class Join extends Activity implements OnClickListener,
 		String passwordConfirm = edtPasswordConfirm.getText().toString().trim();
 		String name = edtName.getText().toString().trim();
 		String nickname = edtNickname.getText().toString().trim();;
-		String address = edtAddress.getText().toString().trim();;
+		//String address = edtAddress.getText().toString().trim();;
 		int birth = 0;
 		int grade = 0;
 		birth = mBirth;

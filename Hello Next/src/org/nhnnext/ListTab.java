@@ -196,11 +196,11 @@ public class ListTab extends Activity implements OnClickListener{
 				if ( listData.getImgURL() != null ) {
 					new DownloadImageTask((ImageView) view.findViewById(R.id.listtab_custom_image))
 			       .execute(listData.getImgURL());
-					image.setImageDrawable(common.LoadImageFromWebOperations(listData.getImgURL()));
+					//image.setImageDrawable(common.LoadImageFromWebOperations(listData.getImgURL()));
 				} else {
 					new DownloadImageTask((ImageView) view.findViewById(R.id.listtab_custom_image))
 			        .execute("https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-025_book_reading-32.png");
-					image.setImageDrawable(common.LoadImageFromWebOperations("https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-025_book_reading-32.png"));
+					//image.setImageDrawable(common.LoadImageFromWebOperations("https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-025_book_reading-32.png"));
 				}
 			}
 
